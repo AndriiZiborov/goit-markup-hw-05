@@ -79,9 +79,7 @@ img {
 }
 
 .header a {
- 
-  /* padding-top: 24px;
-  padding-bottom: 25px; */
+
   display: inline-block;
   text-decoration: none;
 }
@@ -136,6 +134,7 @@ img {
 
 .link {
   color: var(--primary-text-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -180,6 +179,7 @@ position: relative;
 .header .link:hover,
 .header .link:focus {
   color: var(--accent-color);
+  
 }
 
 .contacts {
@@ -250,11 +250,13 @@ footer a {
 
 address a {
   color: var(--transparent-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 address a:hover,
 address a:focus {
   color: var(--accent-color);
+  
 }
 
 .join-block {
@@ -504,11 +506,8 @@ address a:focus {
   align-items: center;   
 
   color: var(--color4, #afb1b8);
-}
-
-.social-links-icon {
-  display: block;
-  fill: currentColor;
+  transition: background-color 450ms cubic-bezier(0.4, 0, 0.2, 1), 
+              color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .item-link:hover,
@@ -519,6 +518,10 @@ address a:focus {
   cursor: pointer;
 }
 
+.social-links-icon {
+  display: block;
+  fill: currentColor;
+}
 
 /*=============== стили кнопок ======================*/
 .button {
@@ -544,6 +547,9 @@ address a:focus {
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .second {
@@ -555,6 +561,10 @@ address a:focus {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
+  
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button.second:hover,
@@ -565,12 +575,14 @@ address a:focus {
 
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+
 }
 
 .button.first:hover {
   color: var(--primary-text-color);
   background-color: var(--primary-bg-color);
   cursor: pointer;
+
 }
 
 /*==================== список предложений ====================*/
@@ -641,12 +653,15 @@ address a:focus {
 
 .offers-page-link {
   display: inline-block;
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   
 }
 
 .offers-page-link:hover,
 .offers-page-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+  
 }
 
 /*============= Оверлэй на карточку технокряк =============*/
@@ -706,6 +721,9 @@ transform: translateY(-100%);
   color: var(--color4, #afb1b8);
   border: 1px solid #afb1b8;
   border-radius: 4px;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-item-link:hover,
@@ -744,57 +762,7 @@ transform: translateY(-100%);
 
 
 
-.thumb {
-outline: 1px solid tomato;
-display: inline-block;
-margin-top: 100px;
-margin-left: 200px;
-margin-bottom: 200px;
-position: relative;
-}
 
-.thumb::before {
-  content: "";
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-
-  background-color: rgba(0, 255, 255, 0.5);
-  opacity: 0;
-}
-
-
-
-.test-btn {
-  
-  width: 150px;
-  height: 70px;
-  background-color: aqua;
-  cursor: pointer;
-  border-radius: 10px;
-  border-color: aqua;
-
-}
-
-.btnabsolute {
-  display: flex;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: 500ms opacity linear;
-}
-
-.thumb:hover .btnabsolute {
-opacity: 1;
-
-}
-
-/* .thumb:hover::before {
-  opacity: 1;
-} */
 
 
 
@@ -805,11 +773,11 @@ opacity: 1;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 165, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.2);;
 }
 
 .backdrop.is-hidden {
-  opacity: 0;
+  opacity: 1;
   pointer-events: none;
 }
 
@@ -818,53 +786,15 @@ opacity: 1;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  min-width: 400px;
-  min-height: 300px;
-  background-color: #fff;
+  width: 581px;
+  height: 528px;
   padding: 15px;
 
-}
-
-.menu {
-  display: flex;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.menu-item {
- position: relative;
-  margin-right: 15px;
-  outline: 2px solid tomato;
-}
-
-.menu-link {
-  display: block; 
-  padding: 10px 20px;
-  text-decoration: none;  
-  background-color: teal;
-  color: #fff
+  background-color: #fff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 
 }
 
-.submenu {
-  position: absolute;
-  width: 100%;
-  top: 100%;
-  left: 0;
-  
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  background-color: #ccc;
-  display: none;
-}
 
-.menu-item:hover .submenu {
-  display: block;
-}
-
-.submenu a {
-  text-decoration: none; 
-}
 
