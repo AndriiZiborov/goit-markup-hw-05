@@ -54,18 +54,8 @@ img {
 }
 
 
-/* ------------------------------ */
-body {
-  padding-top: 77px;
-}
+
 .header {
-  /* --------------------------------- */
-  background-color: aqua ;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-/* ---------------------------------------- */
   display: flex;
   align-items: center;
 
@@ -92,6 +82,7 @@ body {
  
   /* padding-top: 24px;
   padding-bottom: 25px; */
+  display: inline-block;
   text-decoration: none;
 }
 
@@ -146,29 +137,44 @@ body {
 .link {
   color: var(--primary-text-color);
 }
-/* ================TEST============== */
-.portfolio::after {
-  content: "";
 
-  min-width: 78px;
+
+/* =========== Полоска ============== */
+.portfolio {
+position: relative;
+}
+
+.portfolio::after {
+  position: absolute;
+  content: "";
+  top: 98.5%;
+  left: 0;
+  width: 100%;
   height: 4px;
-  display: block;
+  
   
   
   border-radius: 2px;
   background-color: var(--accent-color);
+}
+
+.studio {
+  position: relative;
 }
 
 .studio::after {
+  position: absolute;
+  top: 98.5%;
+  left: 0;  
   content: "";
 
-  min-width: 48px;
+  width: 100%;
   height: 4px;
-  display: block;
+  /* display: block; */
   border-radius: 2px;
   background-color: var(--accent-color);
 }
-/* ================TEST=============== */
+
 
 
 .header .link:hover,
@@ -395,14 +401,37 @@ address a:focus {
   text-align: center;
 }
 .activity-container-item {
+  position: relative;
   width: calc((100% - 60px) / 3);
+
 }
 
 .activity-container-item:not(:last-child) {
   margin-right: 30px;
 }
 
-/* Наша команда */
+/*============= Оверлэй на чем мы занимаемся ===========*/
+.activity-container-text {
+  content: "";
+  position: absolute; 
+  bottom: 0;
+  display: inline-block;
+  width: 100%;
+  height: 70px;
+  margin: 0;
+  padding-top: 27px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.143;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: rgba(47, 48, 58, 0.8);
+
+}
+
+/* ================ Наша команда ==================*/
 .team {
   padding-top: 94px;
   padding-bottom: 94px;
@@ -455,11 +484,13 @@ address a:focus {
   line-height: 1.18;
 }
 
+/* ======================= ИКОНКИ ===================== */
 .social-links {
   
   display: flex;
   margin-top: 16px;
 }
+
 
 .social-links-item:not(:last-child) {
   margin-right: 10px;
@@ -489,7 +520,7 @@ address a:focus {
 }
 
 
-/* стили кнопок */
+/*=============== стили кнопок ======================*/
 .button {
   border-radius: 4px;
   border: 1px solid transparent;
@@ -542,7 +573,7 @@ address a:focus {
   cursor: pointer;
 }
 
-/* список предложений */
+/*==================== список предложений ====================*/
 .offers-btn {
   justify-content: center;
 }
@@ -558,6 +589,7 @@ address a:focus {
 
 .offers-text {
   padding: 20px 24px;
+  
 }
 
 .offers h2 {
@@ -570,7 +602,7 @@ address a:focus {
   letter-spacing: 0.06em;
 }
 
-.offers p {
+.offers-text p {
   margin: 0;
   margin-top: 4px;
 
@@ -609,6 +641,7 @@ address a:focus {
 
 .offers-page-link {
   display: inline-block;
+  
 }
 
 .offers-page-link:hover,
@@ -616,7 +649,44 @@ address a:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-/* постоянные клиенты */
+/*============= Оверлэй на карточку технокряк =============*/
+
+.offers-thumb {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+
+}
+
+.offers-overlay {
+  position: absolute;
+  top: 100%;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+
+  content: "";  
+  background-color: rgba(33, 150, 243, 0.9);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+}
+
+.offers-page-link:hover .offers-overlay {
+transform: translateY(-100%);
+
+}
+
+.offers-overlay-text {
+  margin: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  color: #ffffff;
+}
+
+
+/*===================== постоянные клиенты ===============*/
 .clients {
   padding-top: 94px;
   padding-bottom: 94px;
