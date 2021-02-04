@@ -278,9 +278,9 @@ address a:focus {
 }
  
 .join-block .item-link {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
   color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  
 }
 
    /* ============ ЗАКАЗ УСЛУГИ ============ */
@@ -499,23 +499,27 @@ address a:focus {
 }
 
 .item-link {
+
   width: 44px;
   height: 44px;
   display: flex;
   justify-content: center;
   align-items: center;   
 
+  
   color: var(--color4, #afb1b8);
-  transition: background-color 450ms cubic-bezier(0.4, 0, 0.2, 1), 
-              color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: #fff;
+  border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+  color 250ms cubic-bezier(0.4, 0, 0.2, 1)  ;
 }
 
 .item-link:hover,
 .item-link:focus{
   color: #ffffff;
   background-color: var(--accent-color);
-  border-radius: 50%;
   cursor: pointer;
+
 }
 
 .social-links-icon {
@@ -687,7 +691,8 @@ address a:focus {
   
 }
 
-.offers-page-link:hover .offers-overlay {
+.offers-page-link:hover .offers-overlay,
+.offers-page-link:focus .offers-overlay {
 transform: translateY(-100%);
 
 }
@@ -756,14 +761,8 @@ transform: translateY(-100%);
 }
 
 
-/* -------------------------------------------- */
 
-
-
-
-
-
-
+/*=================== МОДАЛЬНОЕ ОКНО ======================== */
 
 
 
@@ -773,27 +772,51 @@ transform: translateY(-100%);
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
+              background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
-  opacity: 1;
+  opacity: 0;
   pointer-events: none;
 }
 
 .modal {
+  
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 581px;
   height: 528px;
-  padding: 15px;
+  padding: 8px;
 
+  
   background-color: #fff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+}
 
+.modal-close {
+  display: flex;
+  margin-left: auto;
+  width: 30px;
+  height: 30px; 
+  padding: 6px;
+  /* background-image: url(../img/close-black-18dp.svg);
+  background-repeat: no-repeat;
+  background-position: center; */
+
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
 }
 
 

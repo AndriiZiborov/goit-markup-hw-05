@@ -71,13 +71,25 @@
     <section class="service-container background">
         <div class="container">
           <h1 class="service-title" >Эффективные решения <br> для вашего бизнеса</h1>
-          <button class="button first" type="button">Заказать услугу</button>
+          <button class="button first" type="button" data-modal-open>Заказать услугу</button>
         </div>
-    </section>
 
     <!-- Модальное окно -->
-     <div></div>
-     
+    <div class="backdrop is-hidden" data-modal> 
+      <div class="modal"> 
+        <button class="modal-close" data-modal-close>
+        <svg width="18px" height="18px">
+          <use href="./img/sprite.svg#icon-close-black-18dp"></use>
+        </svg>
+        </button>
+      </div>
+    </div>
+        
+
+
+    </section>
+
+
 
 
     <!--мягкие навыки-->
@@ -417,22 +429,7 @@
     </div>
   </footer>
 
-
-  
-<!-- <div class="backdrop is-hidden">
-  <div class="modal">
-    <p>Значимость этих проблем настолько очевидна, 
-      что реализация плановых заданий.
-      Значимость этих проблем настолько очевидна, 
-      что реализация плановых заданий.
-      Значимость этих проблем настолько очевидна, 
-      что реализация плановых заданий.</p>
-      <button>close</button>
-  </div>
-</div> -->
-
-
-
+<script src="./js/modal.js"></script>
 
 </body>
 </html>
